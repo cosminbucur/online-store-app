@@ -1,6 +1,7 @@
 package com.fm.store.catalog;
 
 import com.fm.store.order.CartItem;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CartServiceTest {
 
@@ -31,6 +33,14 @@ class CartServiceTest {
         int actual = cartService.countItems();
 
         assertThat(actual).isOne();
+    }
+
+    @Test
+    void whenAddUnavailableProduct_shouldThrowException() {
+        CartItem cartItem = new CartItem("lamp", 0, 3);
+
+        assertThrows(RuntimeException.class,
+                () -> cartService.addItem(cartItem));
     }
 
     @Test
