@@ -1,11 +1,15 @@
 package com.fm.store.notification;
 
+import com.fm.store.notification.sms.SmsService;
+
 public class NotificationService {
 
     private final EmailService emailService;
+    private final SmsService smsService;
 
-    public NotificationService(EmailService emailService) {
+    public NotificationService(EmailService emailService, SmsService smsService) {
         this.emailService = emailService;
+        this.smsService = smsService;
     }
 
     public void sendEmailConfirmation() {
@@ -17,8 +21,7 @@ public class NotificationService {
     }
 
     public void sendSMSConfirmation(String phoneNumber, String message) {
-        System.out.println("/POST /api/1.0/simple/transactional");
-        System.out.println(phoneNumber + ": " + message);
+        smsService.sendSMSConfirmation(phoneNumber, message);
     }
 
 }

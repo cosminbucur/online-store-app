@@ -1,5 +1,7 @@
 package com.fm.store.notification;
 
+import com.fm.store.config.PropertiesLoader;
+import com.fm.store.config.SecretsConfig;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,7 +10,8 @@ class EmailServiceTest {
 
     @Test
     void whenSendEmail_thenOk() {
-        EmailService emailService = new EmailService();
+        PropertiesLoader propertiesLoader = new PropertiesLoader();
+        EmailService emailService = new EmailService(propertiesLoader.getSecretsConfig());
 
         String orderId = "12345";
 

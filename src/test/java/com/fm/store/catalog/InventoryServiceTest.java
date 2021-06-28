@@ -1,5 +1,6 @@
 package com.fm.store.catalog;
 
+import com.fm.store.core.catalog.InventoryService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

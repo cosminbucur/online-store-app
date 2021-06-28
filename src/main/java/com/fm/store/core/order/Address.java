@@ -1,4 +1,4 @@
-package com.fm.store.order;
+package com.fm.store.core.order;
 
 public class Address {
 

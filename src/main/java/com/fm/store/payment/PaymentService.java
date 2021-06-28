@@ -3,6 +3,7 @@ package com.fm.store.payment;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+// TODO: integrate with stripe
 public class PaymentService {
 
     public boolean makePayment(CardInfo cardInfo) {

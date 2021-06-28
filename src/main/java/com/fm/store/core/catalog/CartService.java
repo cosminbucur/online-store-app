@@ -1,6 +1,6 @@
-package com.fm.store.catalog;
+package com.fm.store.core.catalog;
 
-import com.fm.store.order.CartItem;
+import com.fm.store.core.order.CartItem;
 
 import java.util.ArrayList;
 import java.util.List;

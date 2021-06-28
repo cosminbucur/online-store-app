@@ -1,4 +1,4 @@
-package com.fm.store.catalog;
+package com.fm.store.core.catalog;
 
 import java.util.Map;
 

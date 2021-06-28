@@ -1,8 +1,8 @@
 package com.fm.store.shipping;
 
 import com.fm.store.notification.NotificationService;
-import com.fm.store.order.Address;
-import com.fm.store.order.CartItem;
+import com.fm.store.core.order.Address;
+import com.fm.store.core.order.CartItem;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -16,6 +16,7 @@ public class ShippingService {
         this.notificationService = notificationService;
     }
 
+    // TODO: integrate with shippo
     public void shipProducts(List<CartItem> cartItems, Address destination) {
         // customer id
         // customer phone number

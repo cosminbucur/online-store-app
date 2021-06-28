@@ -1,6 +1,6 @@
-package com.fm.store.review;
+package com.fm.store.core.review;
 
-import com.fm.store.catalog.InventoryService;
+import com.fm.store.core.catalog.InventoryService;
 
 public class ReviewService {
 

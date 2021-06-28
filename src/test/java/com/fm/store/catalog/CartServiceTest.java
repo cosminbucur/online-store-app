@@ -1,7 +1,8 @@
 package com.fm.store.catalog;
 
-import com.fm.store.order.CartItem;
-import org.junit.jupiter.api.Assertions;
+import com.fm.store.core.catalog.CartService;
+import com.fm.store.core.catalog.InventoryService;
+import com.fm.store.core.order.CartItem;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

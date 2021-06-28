@@ -1,12 +1,15 @@
 package com.fm.store;
 
+import com.fm.store.config.SecretsConfig;
 import com.fm.store.notification.EmailService;
 import com.fm.store.notification.NotificationService;
-import com.fm.store.order.Address;
+import com.fm.store.config.PropertiesLoader;
+import com.fm.store.notification.sms.SmsService;
+import com.fm.store.core.order.Address;
 import com.fm.store.payment.CardInfo;
-import com.fm.store.order.CartItem;
-import com.fm.store.catalog.CartService;
-import com.fm.store.catalog.InventoryService;
+import com.fm.store.core.order.CartItem;
+import com.fm.store.core.catalog.CartService;
+import com.fm.store.core.catalog.InventoryService;
 import com.fm.store.payment.PaymentService;
 import com.fm.store.shipping.ShippingService;
 import org.junit.jupiter.api.Test;
@@ -29,8 +32,12 @@ class AcceptanceTest {
         CartService cartService = new CartService(inventoryService);
         PaymentService paymentService = new PaymentService();
 
-        EmailService emailService = new EmailService();
-        NotificationService notificationService = new NotificationService(emailService);
+        PropertiesLoader propertiesLoader = new PropertiesLoader();
+        SecretsConfig secretsConfig = propertiesLoader.getSecretsConfig();
+        EmailService emailService = new EmailService(secretsConfig);
+
+        SmsService smsService = new SmsService(secretsConfig);
+        NotificationService notificationService = new NotificationService(emailService, smsService);
         ShippingService shippingService = new ShippingService(notificationService);
 
         // add products in inventory

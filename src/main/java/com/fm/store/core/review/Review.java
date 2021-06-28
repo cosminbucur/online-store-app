@@ -1,4 +1,4 @@
-package com.fm.store.review;
+package com.fm.store.core.review;
 
 import java.time.LocalDate;
 
