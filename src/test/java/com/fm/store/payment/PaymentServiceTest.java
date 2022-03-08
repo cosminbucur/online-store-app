@@ -1,4 +1,4 @@
-package com.fm.store.catalog;
+package com.fm.store.payment;
 
 import com.fm.store.payment.CardInfo;
 import com.fm.store.payment.PaymentService;
